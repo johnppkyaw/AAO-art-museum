@@ -1,4 +1,5 @@
-import { useParams } from 'react-router-dom';
+import { useParams, Route } from 'react-router-dom';
+import ArtImageTile from '../ArtImageTile/ArtImageTile.js';
 
 function GalleryView({galleries}) {
 
@@ -12,6 +13,17 @@ function GalleryView({galleries}) {
     <div>
     <h1>Hello from galleryview</h1>
     <h2>{targetGallery.name}</h2>
+    <Route path="/galleries/:galleryId">
+    {
+      targetGallery.objects.map((artwork, index) => (
+
+          <ArtImageTile art={artwork} key={index} galleryId={galleryId}/>
+
+      ))
+    }
+    </Route>
+
+
     </div>
   )
 };

@@ -12,7 +12,7 @@ function App() {
     <GalleryNavigation galleries={harvardArt.records} />
 
     <Route path="/galleries/:galleryId">
-      <GalleryView />
+      <GalleryView galleries={harvardArt.records}/>
     </Route>
 
     </div>
